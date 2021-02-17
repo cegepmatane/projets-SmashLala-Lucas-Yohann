@@ -10,6 +10,7 @@ public class JoueurReseau : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //pour ignorer des scirpt (eviter le doublon)
         photonView = GetComponent<PhotonView>();
         if (!photonView.IsMine)
         {

@@ -4,8 +4,12 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 
+
 public class PhotonManager : MonoBehaviourPunCallbacks
 {
+    public PersonnageCreation personnageCreation;
+    [SerializeField] public List<string> nomPrefab = new List<string>();
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +19,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     //connection au lobby de jeu
@@ -26,11 +30,13 @@ public class PhotonManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinedLobby()
     {
-        PhotonNetwork.JoinOrCreateRoom("Room", new RoomOptions {MaxPlayers = 2}, TypedLobby.Default);
+        PhotonNetwork.JoinOrCreateRoom("Room", new RoomOptions { MaxPlayers = 2 }, TypedLobby.Default);
     }
 
     public override void OnJoinedRoom()
     {
-        PhotonNetwork.Instantiate("Lapin", new Vector2(Random.Range(-8f, 8f), transform.position.y), Quaternion.identity);
+        string nomPersonnage = string.Join(",", nomPrefab);
+        PhotonNetwork.Instantiate(nomPersonnage, new Vector2(Random.Range(-8f, 8f), transform.position.y), Quaternion.identity);
     }
+    
 }
