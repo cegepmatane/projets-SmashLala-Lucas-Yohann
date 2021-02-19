@@ -7,8 +7,8 @@ using Photon.Realtime;
 
 public class PhotonManager : MonoBehaviourPunCallbacks
 {
-    public PersonnageCreation personnageCreation;
-    [SerializeField] public List<string> nomPrefab = new List<string>();
+    //public PersonnageCreation personnageCreation;
+    //[SerializeField] public List<string> nomPrefab = new List<string>();
     
     // Start is called before the first frame update
     void Start()
@@ -35,8 +35,9 @@ public class PhotonManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        string nomPersonnage = string.Join(",", nomPrefab);
-        PhotonNetwork.Instantiate(nomPersonnage, new Vector2(Random.Range(-8f, 8f), transform.position.y), Quaternion.identity);
+        //string nomPersonnage = string.Join(",", nomPrefab);
+        //PhotonNetwork.Instantiate(nomPersonnage, new Vector2(Random.Range(-8f, 8f), transform.position.y), Quaternion.identity);
+        PhotonNetwork.Instantiate("Lapin", new Vector2(Random.Range(-8f, 8f), transform.position.y), Quaternion.identity);
     }
     
 }
