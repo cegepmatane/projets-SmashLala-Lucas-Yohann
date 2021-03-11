@@ -24,6 +24,6 @@ public class JoueurReseau : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       // deplacement.DeplacementJoueur(float _horizontalMovement);
     }
 }
