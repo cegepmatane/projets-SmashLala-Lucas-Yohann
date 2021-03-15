@@ -1,9 +1,12 @@
-
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
+
 
 public class Deplacement : MonoBehaviour
-{
+{ 
 
     public float vitesse;
     public float jumpforce;
@@ -18,6 +21,9 @@ public class Deplacement : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
+
+    public bool jeTourne;
+    
 
 
     private Vector3 velocity = Vector3.zero;
@@ -60,14 +66,17 @@ public class Deplacement : MonoBehaviour
         }
     }
 
-    void Flip(float _velocity)
+  
+    public void Flip(float _velocity)
     {
         if(_velocity > 0.1f)
         {
             spriteRenderer.flipX = true;
+            jeTourne = true;
         } else if(_velocity < -0.1f)
         {
             spriteRenderer.flipX = false;
+            jeTourne = false;
         }
     }
 }
