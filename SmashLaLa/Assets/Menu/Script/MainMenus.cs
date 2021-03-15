@@ -14,7 +14,7 @@ public class MainMenus : MonoBehaviour
         Debug.Log("script menuPuase()");
     }
 
-    void Update ()
+    public void Update ()
     {
        
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -36,15 +36,16 @@ public class MainMenus : MonoBehaviour
         }
     }
 
-    void Resume()
+   public void Resume()
     {
+       
         pauseMenuUi.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
-    
 
-    void Pause()
+
+    public void Pause()
     {
         Debug.Log("je suis dans pause()");
         pauseMenuUi.SetActive(true);
@@ -57,11 +58,11 @@ public class MainMenus : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }*/
 
-    /*public void QuitGame()
+    public void QuitGame()
     {
         Debug.Log("Quit");
         Application.Quit();
     }
-    */
+    
 }
     
