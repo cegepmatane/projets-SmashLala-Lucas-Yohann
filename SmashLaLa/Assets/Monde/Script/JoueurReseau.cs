@@ -9,6 +9,8 @@ public class JoueurReseau : MonoBehaviour, IPunObservable
     private PhotonView photonView;
     private object IsFiring;
     //public Deplacement deplacement;
+    
+
     public float vitesse;
     public float jumpforce;
 
