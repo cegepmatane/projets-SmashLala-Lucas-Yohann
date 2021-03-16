@@ -11,7 +11,7 @@ public class MainMenus : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("script menuPuase()");
+
     }
 
     public void Update ()
@@ -24,13 +24,11 @@ public class MainMenus : MonoBehaviour
 
             if (GameIsPaused)
             {
-                Debug.Log("Dans le if");
                 Resume();
             }
             
             else
             {
-                Debug.Log("Dans le else");
                 Pause();
             }
         }
