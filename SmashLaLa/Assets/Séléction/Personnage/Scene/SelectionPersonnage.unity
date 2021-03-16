@@ -1524,15 +1524,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   personnageList:
-  - splash: {fileID: -23792059411196189, guid: f729d6acae7cd754a864abda75a4bbd7, type: 3}
-    nomPersonnage: Petite Poule
+  - splash: {fileID: 21300006, guid: f2ed27d6c1c3ccc48959bcca269d88f0, type: 3}
+    prefabePersonnage: {fileID: 9203030102374988196, guid: a7981d97fddcfd649a0f0e8bdeee94f5, type: 3}
     personnageCouleur: {r: 0.8207547, g: 0.12698463, b: 0.73689204, a: 1}
   - splash: {fileID: 3450125647347128806, guid: 070a0fea8d7c56647b4a4a1bf7feb63e, type: 3}
-    nomPersonnage: Jackouille
+    prefabePersonnage: {fileID: 1844143422166459245, guid: 8dbbea35b2a39fc4ba747580fe30c5bb, type: 3}
     personnageCouleur: {r: 0.9716981, g: 0, b: 0, a: 1}
   personnageNom: {fileID: 1826060613}
   personnageSplash: {fileID: 1139457499}
   fondCouleur: {fileID: 1109427102}
+  personnage: 0
+  choix: 
 --- !u!4 &1994414472
 Transform:
   m_ObjectHideFlags: 0

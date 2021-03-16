@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class PersonnageCreation : MonoBehaviour
 {
+	public static PersonnageCreation instance;
 	private int selectionPersonnageIndex;
 	private Color desiredColor;
 
@@ -19,11 +20,16 @@ public class PersonnageCreation : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI personnageNom;
 	[SerializeField] private Image personnageSplash;
 	[SerializeField] private Image fondCouleur;
-	public int personnage;
-	public string choix;
+	public GameObject personnageChoix;
 
 
-	private void Start()
+    public void Awake()
+    {
+		DontDestroyOnLoad(this);
+		instance = this;
+
+	}
+    private void Start()
 	{
 		UpdateSelectionDePersonnage();
 	}
@@ -50,11 +56,8 @@ public class PersonnageCreation : MonoBehaviour
 
 	public void boutonConfirmation()
 	{
-		Debug.Log(string.Format("personnage {0}:{1} est choisis", selectionPersonnageIndex, personnageList[selectionPersonnageIndex].nomPersonnage));
-		personnage = selectionPersonnageIndex;
-		choix = personnage.ToString();
-		
-		
+		Debug.Log(string.Format("personnage {0}:{1} est choisis", selectionPersonnageIndex, personnageList[selectionPersonnageIndex].prefabePersonnage));
+		personnageChoix = personnageList[selectionPersonnageIndex].prefabePersonnage;
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}
 
@@ -62,7 +65,7 @@ public class PersonnageCreation : MonoBehaviour
 	{
 		//splash, nom, contour couleur
 		personnageSplash.sprite = personnageList[selectionPersonnageIndex].splash;
-		personnageNom.text = personnageList[selectionPersonnageIndex].nomPersonnage;
+		personnageNom.text = personnageList[selectionPersonnageIndex].prefabePersonnage.name;
 		fondCouleur.color = personnageList[selectionPersonnageIndex].personnageCouleur;
 		desiredColor = personnageList[selectionPersonnageIndex].personnageCouleur;			
 	}
@@ -71,7 +74,9 @@ public class PersonnageCreation : MonoBehaviour
 	public class SelectionPersonnageObject
 	{ 
 		public Sprite splash;
-		public string nomPersonnage;
+		public GameObject prefabePersonnage;
 		public Color personnageCouleur;
 	}
+
+
 }

@@ -79,12 +79,12 @@ public class JoueurReseau : MonoBehaviour, IPunObservable
         if (_velocity > 0.1f)
         {
         
-            this.gameObject.transform.localScale = new Vector3(-1.5f, 1.5f, 0f);
+            this.gameObject.transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
             jeTourne = true;
         }
         else if (_velocity < -0.1f)
         {
-            this.gameObject.transform.localScale = new Vector3(1.5f, 1.5f, 0f);
+            this.gameObject.transform.localScale = new Vector3(transform.localScale.x * 1, transform.localScale.y, transform.localScale.z);
             jeTourne = false;
             
         }

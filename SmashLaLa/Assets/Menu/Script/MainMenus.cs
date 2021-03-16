@@ -51,10 +51,10 @@ public class MainMenus : MonoBehaviour
         GameIsPaused = true;
     }
  
-    /*public void PlayGame()
+    public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }*/
+    }
 
     public void QuitGame()
     {
