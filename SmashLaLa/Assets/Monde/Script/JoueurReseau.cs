@@ -81,6 +81,7 @@ public class JoueurReseau : MonoBehaviour, IPunObservable
         else if (_velocity < -0.1f)
         {
             spriteRenderer.flipX = false;
+            jeTourne = false;
             
         }
     }
