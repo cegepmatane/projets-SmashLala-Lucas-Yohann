@@ -20,6 +20,7 @@ public class JoueurReseau : MonoBehaviour, IPunObservable
 
     public Transform groundCheckLeft;
     public Transform groundCheckRight;
+  
 
 
     public Rigidbody2D rb;
@@ -77,12 +78,13 @@ public class JoueurReseau : MonoBehaviour, IPunObservable
     {
         if (_velocity > 0.1f)
         {
-            spriteRenderer.flipX = true;
+        
+            this.gameObject.transform.localScale = new Vector3(-1.5f, 1.5f, 0f);
             jeTourne = true;
         }
         else if (_velocity < -0.1f)
         {
-            spriteRenderer.flipX = false;
+            this.gameObject.transform.localScale = new Vector3(1.5f, 1.5f, 0f);
             jeTourne = false;
             
         }
@@ -106,12 +108,12 @@ public class JoueurReseau : MonoBehaviour, IPunObservable
         if (stream.IsWriting)
         {
             // We own this player: send the others our data
-            stream.SendNext(spriteRenderer.flipX);
+            stream.SendNext(jeTourne);
         }
         else
         {
             // Network player, receive data
-            this.spriteRenderer.flipX = (bool)stream.ReceiveNext();
+            this.jeTourne = (bool)stream.ReceiveNext();
         }
     }
     
