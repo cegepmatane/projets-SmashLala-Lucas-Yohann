@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class PersonnageCreation : MonoBehaviour
@@ -18,6 +19,8 @@ public class PersonnageCreation : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI personnageNom;
 	[SerializeField] private Image personnageSplash;
 	[SerializeField] private Image fondCouleur;
+	public int personnage;
+	public string choix;
 
 
 	private void Start()
@@ -48,6 +51,11 @@ public class PersonnageCreation : MonoBehaviour
 	public void boutonConfirmation()
 	{
 		Debug.Log(string.Format("personnage {0}:{1} est choisis", selectionPersonnageIndex, personnageList[selectionPersonnageIndex].nomPersonnage));
+		personnage = selectionPersonnageIndex;
+		choix = personnage.ToString();
+		
+		
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}
 
 	private void UpdateSelectionDePersonnage()
