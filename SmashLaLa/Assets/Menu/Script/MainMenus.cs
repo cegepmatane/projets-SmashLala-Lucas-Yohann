@@ -58,8 +58,12 @@ public class MainMenus : MonoBehaviour
 
     public void QuitGame()
     {
-        
         Application.Quit();
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -2);
     }
     
 }
