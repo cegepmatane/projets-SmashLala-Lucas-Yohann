@@ -54,6 +54,7 @@ public class Ennemy : MonoBehaviour
             Die();
             Destroy(gameObject, 1);
             jeMeurt = true;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
         }
         

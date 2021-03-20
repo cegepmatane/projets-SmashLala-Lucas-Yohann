@@ -17,10 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Monde/Scene/Lvl1.unity
     guid: 5c7ec60109a0a394795613cf74ee8394
-  - enabled: 1
+  - enabled: 0
     path: Assets/Monde/Scene/FinVictoire.unity
     guid: c3d77061509d0f04da405dc16eff8f6f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Monde/Scene/FinDefaite.unity
     guid: ff7ae50d8e05fbb47a76a53720bba970
+  - enabled: 1
+    path: Assets/Monde/Scene/MenuVictoire.unity
+    guid: 2cc2a023584358e44b9fd2b4b9a8d7c4
   m_configObjects: {}
