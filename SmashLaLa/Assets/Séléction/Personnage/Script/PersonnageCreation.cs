@@ -72,7 +72,7 @@ public class PersonnageCreation : MonoBehaviour
 
 	[System.Serializable]
 	public class SelectionPersonnageObject
-	{ 
+	{
 		public Sprite splash;
 		public GameObject prefabePersonnage;
 		public Color personnageCouleur;

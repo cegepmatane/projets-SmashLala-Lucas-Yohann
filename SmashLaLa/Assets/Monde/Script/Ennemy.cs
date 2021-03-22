@@ -16,7 +16,6 @@ public class Ennemy : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
 
-
     public bool jeMeurt = false;
 
     public void Awake()
@@ -54,7 +53,7 @@ public class Ennemy : MonoBehaviour
             Die();
             Destroy(gameObject, 1);
             jeMeurt = true;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            
 
         }
         
@@ -64,8 +63,8 @@ public class Ennemy : MonoBehaviour
     {
 
         animator.SetBool("mort", true);
-            
-       
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
     }
 }
 

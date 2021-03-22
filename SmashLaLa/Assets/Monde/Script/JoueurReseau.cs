@@ -15,6 +15,7 @@ public class JoueurReseau : MonoBehaviour, IPunObservable
 
     public float vitesse;
     public float jumpforce;
+    public float maVie;
 
     private bool isJumping;
     private bool isGrounded;
@@ -70,11 +71,17 @@ public class JoueurReseau : MonoBehaviour, IPunObservable
             {
                 scripte.enabled = false;
             }
+            
         }
 
         else if (photonView.IsMine)
         {
             gameObject.layer = 7;
+            maVie = Ennemy.instance.currentHealth;
+            if (maVie >= 0)
+            { 
+               
+            }
         }
     }
 
@@ -119,6 +126,7 @@ public class JoueurReseau : MonoBehaviour, IPunObservable
             stream.SendNext(Ennemy.instance.currentHealth);
             stream.SendNext(Combat.instance.jAttaque);
             stream.SendNext(Ennemy.instance.jeMeurt);
+            
 
             
             

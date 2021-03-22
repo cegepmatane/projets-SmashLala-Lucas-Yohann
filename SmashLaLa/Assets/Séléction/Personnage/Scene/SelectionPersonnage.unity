@@ -1527,8 +1527,8 @@ MonoBehaviour:
   - splash: {fileID: 21300006, guid: f2ed27d6c1c3ccc48959bcca269d88f0, type: 3}
     prefabePersonnage: {fileID: 1264110106361124480, guid: 65e170dfe8f13ec4ca76a52ae9a831a4, type: 3}
     personnageCouleur: {r: 0.8207547, g: 0.12698463, b: 0.73689204, a: 1}
-  - splash: {fileID: 3450125647347128806, guid: 070a0fea8d7c56647b4a4a1bf7feb63e, type: 3}
-    prefabePersonnage: {fileID: 1844143422166459245, guid: 8dbbea35b2a39fc4ba747580fe30c5bb, type: 3}
+  - splash: {fileID: 21300000, guid: ae297123f091bbf4e8f1835eb98fb293, type: 3}
+    prefabePersonnage: {fileID: 1739507557444565802, guid: b41d7d53950fdca41927a7ce66f38f6d, type: 3}
     personnageCouleur: {r: 0.9716981, g: 0, b: 0, a: 1}
   personnageNom: {fileID: 1826060613}
   personnageSplash: {fileID: 1139457499}
