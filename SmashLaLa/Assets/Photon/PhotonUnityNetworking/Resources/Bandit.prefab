@@ -286,7 +286,6 @@ MonoBehaviour:
   - {fileID: 8209432493232367509}
   vitesse: 400
   jumpforce: 500
-  maVie: 0
   groundCheckLeft: {fileID: 7604640793758639656}
   groundCheckRight: {fileID: 5100643638644081226}
   rb: {fileID: 6890765050155430993}

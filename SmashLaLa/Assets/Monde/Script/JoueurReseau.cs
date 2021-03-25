@@ -11,11 +11,13 @@ public class JoueurReseau : MonoBehaviour, IPunObservable
     private object IsFiring;
     //public Deplacement deplacement;
     //public Combat combat;
+
+    private Ennemy maVie;
+    private Combat jeTape;
     
 
     public float vitesse;
     public float jumpforce;
-    public float maVie;
 
     private bool isJumping;
     private bool isGrounded;
@@ -37,6 +39,7 @@ public class JoueurReseau : MonoBehaviour, IPunObservable
     void Start()
     {
         scripteAIgnorerF();
+        maVie = GetComponent<Ennemy>();
     }
 
     void FixedUpdate()
@@ -77,11 +80,7 @@ public class JoueurReseau : MonoBehaviour, IPunObservable
         else if (photonView.IsMine)
         {
             gameObject.layer = 7;
-            maVie = Ennemy.instance.currentHealth;
-            if (maVie >= 0)
-            { 
-               
-            }
+
         }
     }
 
@@ -123,21 +122,17 @@ public class JoueurReseau : MonoBehaviour, IPunObservable
         {
             // We own this player: send the others our data
             stream.SendNext(jeTourne);
-            stream.SendNext(Ennemy.instance.currentHealth);
-            stream.SendNext(Combat.instance.jAttaque);
-            stream.SendNext(Ennemy.instance.jeMeurt);
-            
-
-            
-            
+            stream.SendNext(maVie.currentHealth);
+            stream.SendNext(jeTape.jAttaque);
+            stream.SendNext(maVie.jeMeurt);
         }
         else
         {
             // Network player, receive data
             this.jeTourne = (bool)stream.ReceiveNext();
-            Ennemy.instance.currentHealth = (int)stream.ReceiveNext();
-            Combat.instance.jAttaque = (bool)stream.ReceiveNext(); 
-            Ennemy.instance.jeMeurt = (bool)stream.ReceiveNext();
+            this.maVie.currentHealth = (int)stream.ReceiveNext();
+            this.jeTape.jAttaque = (bool)stream.ReceiveNext(); 
+            this.maVie.jeMeurt = (bool)stream.ReceiveNext();
             
         }
     }
