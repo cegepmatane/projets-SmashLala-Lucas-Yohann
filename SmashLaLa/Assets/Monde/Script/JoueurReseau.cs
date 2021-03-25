@@ -122,17 +122,17 @@ public class JoueurReseau : MonoBehaviour, IPunObservable
         {
             // We own this player: send the others our data
             stream.SendNext(jeTourne);
-            stream.SendNext(maVie.currentHealth);
-            stream.SendNext(jeTape.jAttaque);
-            stream.SendNext(maVie.jeMeurt);
+            stream.SendNext(Ennemy.instance.currentHealth);
+            stream.SendNext(Combat.instance.jAttaque);
+            stream.SendNext(Ennemy.instance.jeMeurt);
         }
         else
         {
             // Network player, receive data
             this.jeTourne = (bool)stream.ReceiveNext();
-            this.maVie.currentHealth = (int)stream.ReceiveNext();
-            this.jeTape.jAttaque = (bool)stream.ReceiveNext(); 
-            this.maVie.jeMeurt = (bool)stream.ReceiveNext();
+           Ennemy.instance.currentHealth = (int)stream.ReceiveNext();
+            Combat.instance.jAttaque = (bool)stream.ReceiveNext(); 
+            Ennemy.instance.jeMeurt = (bool)stream.ReceiveNext();
             
         }
     }
